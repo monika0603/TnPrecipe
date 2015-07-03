@@ -35,7 +35,8 @@ elif "CMSSW_5_2_" in os.environ['CMSSW_VERSION']:
         '/store/relval/CMSSW_5_2_3/RelValJpsiMM/GEN-SIM-RECO/START52_V5-v1/0043/304746CC-097A-E111-A71F-003048FFD76E.root',
     ]
 elif "CMSSW_7_4_" in os.environ['CMSSW_VERSION']:
-    process.GlobalTag.globaltag = cms.string('MCRUN2_74_V7')
+    #  process.GlobalTag.globaltag = cms.string('MCRUN2_74_V7')
+    process.GlobalTag.globaltag = cms.string('MCRUN2_74_V9A')
     process.source.fileNames = [
         '/store/mc/RunIISpring15DR74/JpsiToMuMu_OniaMuonFilter_TuneCUEP8M1_13TeV-pythia8/AODSIM/Asympt50ns_MCRUN2_74_V9A-v1/20000/0050A158-7C20-E511-8A60-B8CA3A70A410.root',
                                 #        '/store/mc/RunIISpring15DR74/JpsiToMuMu_JPsiPt7_13TeV-pythia8/AODSIM/Asympt25ns_MCRUN2_74_V9-v1/60000/3615E328-D708-E511-B2F9-003048FFD752.root',
