@@ -12,7 +12,8 @@ process.source = cms.Source("PoolSource",
 #   'file:/tmp/botta/store/user/fat/MuOnia/Run2010B-Nov4ReReco_v1-Onia2MuMu-v6/52b0ce2a29246dfcd7fb39d814d6fb33/onia2MuMuPAT_9_1_BdS.root'
 #    'file:///castor/cern.ch/user/h/hwoehri/cmst3/Fall10/JPsiToMuMu_2MuPEtaFilter_7TeV-pythia6-evtgen/PAT/onia2MuMuPAT_9_1_PfC.root'
 #    'rfio:/castor/cern.ch/user/h/hwoehri/cmst3/Fall10/JPsiToMuMu_2MuPEtaFilter_7TeV-pythia6-evtgen/PAT/onia2MuMuPAT_9_1_PfC.root' #MC
-    'rfio:/castor/cern.ch/user/h/hwoehri/cmst3/Data2010/4thNovReReco/PAT/PAT-MuOnia-Run2010B-Nov4ReReco-Onia2MuMu-v6-onia2MuMuPAT_9_1_BdS.root' #data
+     '/store/data/Run2015B/Charmonium/AOD/PromptReco-v1/000/251/168/00000/1602316B-CF26-E511-BCBA-02163E011B\
+                                      F3.root' #data
     ),
 )
 
@@ -22,10 +23,11 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1))
 
 process.load("Configuration.StandardSequences.MagneticField_cff")
 process.load("Configuration.StandardSequences.Geometry_cff")
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+#process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 process.load("Configuration.StandardSequences.Reconstruction_cff")
 #process.GlobalTag.globaltag = cms.string('FT_R_38X_V14A::All') #ReReco4thNov
-process.GlobalTag.globaltag = cms.string('START38_V12::All') #MC
+process.GlobalTag.globaltag = cms.string('74X_dataRun2_Prompt_v0') #MC
 
 ##==== Merge CaloMuons and Tracks into the collection of reco::Muons ====> it is done in the previous step
 ##==== Make the PatMuonsWithTrigger =====> it is done in the previous step
