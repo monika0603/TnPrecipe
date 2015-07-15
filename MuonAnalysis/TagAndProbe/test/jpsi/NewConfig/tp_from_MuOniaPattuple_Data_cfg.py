@@ -75,9 +75,7 @@ process.tpTree = cms.EDAnalyzer("TagProbeFitTreeProducer",
 #from HLTrigger.HLTfilters.hltHighLevelDev_cfi import hltHighLevelDev
 #process.fastFilter = hltHighLevelDev.clone(HLTPaths = ['HLT_Mu3_Track0_Jpsi'], HLTPathsPrescales = [1])
 from HLTrigger.HLTfilters.hltHighLevel_cfi import hltHighLevel
-    #process.fastFilter = hltHighLevel.clone(HLTPaths = ['HLT_Mu*_L2Mu0', 'HLT_Mu3_Track*_Jpsi*', 'HLT_Mu5_Track*_Jpsi*'],
-process.HLTMu   = process.triggerResultsFilter.clone(triggerConditions = [ 'HLT_Mu*_L2Mu*' ])
-process.HLTBoth = process.triggerResultsFilter.clone(triggerConditions = [ 'HLT_Mu*_L2Mu*', 'HLT_Mu*_Track*_Jpsi*' ],
+process.fastFilter = hltHighLevel.clone(HLTPaths = ['HLT_Mu*_L2Mu*', 'HLT_Mu*_Track*_Jpsi*'],
                                         andOr = cms.bool(True),  # True: OR - False: AND
                                         throw = cms.bool(False), # Don't throw exception if trigger name is unkown
                                         )
