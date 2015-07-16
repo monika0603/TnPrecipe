@@ -53,7 +53,6 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
         glbChi2 = cms.vstring("global.normalizedChi2", "-9999", "9999", ""),
         glbValidMuHits = cms.vstring("globalTrack.numberOfValidMuonHits", "-1", "9999", ""),
         caloComp = cms.vstring("caloCompatibility","-1","5",""),
-        # Added by Monika Sharma for mediumVar
         validFraction = cms.vstring("innerTrack.validFraction","-9999","9999",""),
         chi2LPosition = cms.vstring("combinedQuality.chi2LocalPosition","-9999","9999",""),
         tkKink = cms.vstring("combinedQuality.trkKink","-9999","9999",""),
@@ -78,7 +77,6 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
         tag_Mu7p5_Track7_Jpsi_MU = cms.vstring("ProbeTrigger_Track0", "dummy[pass=1,fail=0]"),
         Mu7p5_L2Mu2_Jpsi_TK = cms.vstring("ProbeTrigger_Track0", "dummy[pass=1,fail=0]"),
         tag_Mu7p5_L2Mu2_Jpsi_MU = cms.vstring("ProbeTrigger_Track0", "dummy[pass=1,fail=0]"),
-        # test
         DoubleMu17TkMu8_TkMu8leg = cms.vstring("ProbeTrigger_Track0", "dummy[pass=1,fail=0]"),
         tag_DoubleMu17TkMu8_TkMu8leg = cms.vstring("ProbeTrigger_Track0", "dummy[pass=1,fail=0]"),
         mcTrue = cms.vstring("MC true", "dummy[true=1,false=0]"),
@@ -171,6 +169,9 @@ TRIGS = [ (2,'Mu7p5_L2Mu2_Jpsi'), (2,'Mu7p5_Track2_Jpsi'), (3.5,'Mu7p5_Track3p5_
 
 if "mc" in scenario:
     process.TnP_MuonID.InputFileNames = ['../tnpJPsi_MC.root']
+
+if "data" in scenario:
+    process.TnP_MuonID.InputFileNames = ['../tnpJPsi_Data.root']
 
 ALLBINS =  [("pt_abseta",PT_ETA_BINS)]
 
